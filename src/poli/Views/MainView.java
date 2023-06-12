@@ -4,22 +4,49 @@
  */
 package poli.Views;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 /**
  *
  * @author subti
  */
-public class MainView extends Application {
+public class MainView extends Application implements Initializable {
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
+        //System.out.println(getClass());
+        BorderPane root = new BorderPane();
+
+        Scene scene = new Scene(root, 800, 600);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Mi Aplicación JavaFX");
+        
+        scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        //root. = root.load();
+        
+        //Scene scene = new Scene(root, 800, 600);
+
+        // Configurar el escenario principal (Stage)
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Mi Aplicación JavaFX");
+        primaryStage.setResizable(false);
+
+        // Mostrar la ventana principal
+        primaryStage.show();
+        
+        /*
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -37,7 +64,7 @@ public class MainView extends Application {
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
     /**
@@ -46,5 +73,9 @@ public class MainView extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }   
     
 }

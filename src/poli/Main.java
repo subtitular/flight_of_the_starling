@@ -4,6 +4,7 @@
  */
 package poli;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import poli.Views.MainView;
@@ -18,7 +19,7 @@ public class Main extends Application {
      * @param args the command line arguments
      */
     private static Stage primaryStage = new Stage();
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
         Application.launch(MainView.class, args);
         //MainView view = new MainView();
