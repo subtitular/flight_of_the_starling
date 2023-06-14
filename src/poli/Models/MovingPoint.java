@@ -5,7 +5,8 @@
 package poli.Models;
 
 /**
- *
+ * Herenda de Point, representa un punto que se mueve, 
+ * Por tanto se puede dibujar en distintas ubicaciones
  * @author subti
  */
 import java.util.HashMap;
@@ -17,6 +18,7 @@ public class MovingPoint extends Point {
     private String opacity;
     private String state;
     private String interpolation;
+    
     public String getSpeed() {
         return speed;
     }

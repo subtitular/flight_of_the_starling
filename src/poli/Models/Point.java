@@ -5,7 +5,7 @@
 package poli.Models;
 
 /**
- *
+ *  Reprensenta un punto que puede ser dibujado en el canvas
  * @author subti
  */
 import java.util.HashMap;

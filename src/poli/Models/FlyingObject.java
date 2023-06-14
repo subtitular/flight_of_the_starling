@@ -5,7 +5,8 @@
 package poli.Models;
 
 /**
- *
+ * Representa un objeto que se desplaza por el aire, 
+ * con o sin propia voluntad
  * @author subti
  */
 import java.util.HashMap;

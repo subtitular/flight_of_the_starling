@@ -5,7 +5,7 @@
 package poli.Models;
 
 /**
- *
+ * Represneta un animal social, que vuela
  * @author subti
  */
 import java.util.HashMap;

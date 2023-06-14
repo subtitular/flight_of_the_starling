@@ -30,6 +30,8 @@ public class MainView extends Application implements Initializable {
         BorderPane root = new BorderPane();
 
         Scene scene = new Scene(root, 800, 600);
+        primaryStage.setMaximized(true);
+        primaryStage.setFullScreen(true);
         primaryStage.setScene(scene);
         primaryStage.setTitle("El Vuelo de los Estorninos");
         

@@ -5,7 +5,8 @@
 package poli.Models;
 
 /**
- *
+ * Representa un Estornino y recopila mediante herencia todas las 
+ * caracteristicas de punto, punto movil, punto volador y animal social
  * @author subti
  */
 import java.util.HashMap;
