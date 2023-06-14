@@ -31,7 +31,7 @@ public class MainView extends Application implements Initializable {
 
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Mi Aplicación JavaFX");
+        primaryStage.setTitle("El Vuelo de los Estorninos");
         
         scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
         //root. = root.load();
@@ -40,7 +40,7 @@ public class MainView extends Application implements Initializable {
 
         // Configurar el escenario principal (Stage)
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Mi Aplicación JavaFX");
+        primaryStage.setTitle("El Vuelo de los Estorninos");
         primaryStage.setResizable(false);
 
         // Mostrar la ventana principal

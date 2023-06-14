@@ -2,37 +2,106 @@
 
 <?import javafx.scene.Scene?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
 
 <Scene xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poli.Assets.MainViewController">
    <root>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="842.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="523.0" prefWidth="842.0">
          <children>
             <Accordion prefHeight="523.0" prefWidth="204.0">
               <panes>
-                <TitledPane animated="false" text="untitled 1">
+                <TitledPane animated="false" text="Usuario">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="21.0" layoutY="31.0" text="Nombre" />
+                              <Label layoutX="21.0" layoutY="56.0" text="Oscar Alberto Peña" />
+                              <Separator layoutX="1.0" layoutY="85.0" prefWidth="200.0" />
+                              <Label layoutX="14.0" layoutY="95.0" text="Preferencias" />
+                              <Label layoutX="14.0" layoutY="142.0" text="Escena" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../OneDrive/Documentos/poli/paradigmas_programacion/Insumos-Actividad%20Foro/wunderbare_welt_des_waldes_baum_pa_25241596_a.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="14.0" layoutY="327.0" text="Tema Musical" />
+                              <Label layoutX="14.0" layoutY="352.0" text="Relaxing Sound 1" />
+                              <Slider layoutX="161.0" layoutY="317.0" orientation="VERTICAL" prefHeight="104.0" prefWidth="14.0" value="35.0" />
+                              <Label layoutX="115.0" layoutY="425.0" text="Volumen" />
+                              <ProgressBar layoutX="6.0" layoutY="376.0" prefHeight="18.0" prefWidth="136.0" progress="0.4" />
+                           </children></AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="untitled 2">
+                <TitledPane animated="false" text="Estorninos">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="8.0" layoutY="6.0" text="Liderazgo" />
+                              <Slider layoutY="23.0" prefHeight="14.0" prefWidth="202.0" value="35.0" />
+                              <Label layoutY="37.0" prefHeight="46.0" prefWidth="201.0" text="Algunos estorninos pueden exhibir cualidades de liderazgo, tomando la delantera en los patrones de vuelo y guiando los movimientos del grupo" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="83.0" text="Cooperación" />
+                              <Slider layoutY="100.0" prefHeight="14.0" prefWidth="202.0" value="55.0" />
+                              <Label layoutY="114.0" prefHeight="59.0" prefWidth="201.0" text="Los estorninos son conocidos por su naturaleza altamente cooperativa. Suelen volar muy cerca unos de otros, sincronizando sus movimientos y realizando giros rápidos o formaciones como una unidad cohesionada." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="179.0" text="Adaptabilidad" />
+                              <Slider layoutY="196.0" prefHeight="14.0" prefWidth="202.0" value="45.0" />
+                              <Label layoutY="210.0" prefHeight="55.0" prefWidth="201.0" text="Los estorninos son aves adaptables, capaces de ajustar sus patrones de vuelo y comportamiento en base a varios factores como las condiciones del viento, las amenazas o los cambios en el entorno." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="265.0" text="Agilidad" />
+                              <Slider layoutY="282.0" prefHeight="14.0" prefWidth="202.0" value="75.0" />
+                              <Label layoutY="296.0" prefHeight="55.0" prefWidth="201.0" text="Los estorninos poseen una notable agilidad en el vuelo, lo que les permite realizar maniobras intrincadas, como cambios repentinos de dirección y aceleraciones o desaceleraciones rápidas." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="361.0" text="Sincronización" />
+                              <Slider layoutY="378.0" prefHeight="14.0" prefWidth="202.0" value="65.0" />
+                              <Label layoutY="392.0" prefHeight="45.0" prefWidth="201.0" text="Los estorninos son reconocidos por su capacidad para volar en grandes bandadas con una sincronización impresionante" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="untitled 3">
+                <TitledPane animated="false" text="Mouse">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="30.0" text="Configuración" />
+                              <Separator layoutX="1.0" layoutY="56.0" prefWidth="200.0" />
+                              <Label layoutX="1.0" layoutY="70.0" text="Comportamiento" />
+                              <RadioButton layoutX="1.0" layoutY="94.0" mnemonicParsing="false" text="Ninguno" />
+                              <RadioButton layoutX="1.0" layoutY="114.0" mnemonicParsing="false" selected="true" text="Viento" />
+                              <RadioButton layoutY="133.0" mnemonicParsing="false" text="Ave de Presa" />
+                              <RadioButton layoutX="1.0" layoutY="152.0" mnemonicParsing="false" text="Estornino" />
+                           </children></AnchorPane>
                   </content>
                 </TitledPane>
               </panes>
             </Accordion>
             <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
          </children>
       </HBox>
    </root>
