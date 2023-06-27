@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
@@ -78,7 +79,10 @@ public class MainView extends Application implements Initializable {
     private Parent createContent() {
         for (int y = 0; y < 720 / 10; y++) {
             for (int x = 0; x < 1280 / 10; x++) {
-                particles.add(new Particle(x * 10, y * 10, Color.BLUE));
+                Random random = new Random();
+                int j = random.nextInt(1280) + 1;
+                int k = random.nextInt(720) + 1;
+                particles.add(new Particle(j , k , Color.GRAY));
             }
         }
 
@@ -97,7 +101,8 @@ public class MainView extends Application implements Initializable {
         pane.setPrefSize(1280, 720);
         return pane;
     }
-        private void onUpdate() {
+    
+    private void onUpdate() {
         g.clearRect(0, 0, 1280, 720);
 
         var cursorPos = new Point2D(mouseX, mouseY);
@@ -110,8 +115,6 @@ public class MainView extends Application implements Initializable {
             g.fillOval(p.x - 1, p.y - 1, 2, 2);
         });
     }
-    
-
 
     /**
      * @param args the command line arguments
