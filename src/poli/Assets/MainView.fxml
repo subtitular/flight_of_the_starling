@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Scene?>
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -52,7 +53,14 @@
                 </TitledPane>
               </panes>
             </Accordion>
-            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Pane>
+                     <children>
+                        <Canvas fx:id="canvas" height="524.0" width="639.0" />
+                     </children>
+                  </Pane>
+               </children></Pane>
          </children>
       </HBox>
    </root>
