@@ -18,7 +18,7 @@ public class Main extends Application {
     /**
      * @param args the command line arguments
      */
-    private static Stage primaryStage = new Stage();
+    //private static Stage primaryStage = new Stage();
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         Application.launch(MainView.class, args);
