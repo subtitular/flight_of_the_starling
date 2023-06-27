@@ -42,14 +42,14 @@ import poli.Models.Point;
  * @author subti
  */
 public class MainView extends Application implements Initializable {
-    /*@FXML
-    private Canvas canvas;*/
+    //@FXML
+    //private Canvas canvas;
     @FXML
     private Slider cantidadSlider;
     @FXML
     private Button playButton;
     
-        private static final double MAX_ATTRACT_DISTANCE = 350;
+    private static final double MAX_ATTRACT_DISTANCE = 350;
     private static final double MIN_ATTRACT_DISTANCE = 0.1;
     private static final double FORCE_CONSTANT = 5000;
 
@@ -59,10 +59,14 @@ public class MainView extends Application implements Initializable {
     private GraphicsContext g;
 
     private List<Particle> particles = new ArrayList<>();
+    @FXML
+    private Pane pane;
 
     @Override
     public void start(Stage stage) throws Exception {
         var scene = new Scene(createContent());
+        //Scene scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        //pane = (Pane)createContent();
         scene.setOnMouseMoved(e -> {
             mouseX = e.getX();
             mouseY = e.getY();
@@ -89,7 +93,7 @@ public class MainView extends Application implements Initializable {
         };
         timer.start();
 
-        var pane = new Pane(canvas);
+        pane = new Pane(canvas);
         pane.setPrefSize(1280, 720);
         return pane;
     }
@@ -127,7 +131,7 @@ public class MainView extends Application implements Initializable {
 
     }
     
-        private static class Particle {
+    private static class Particle {
         double x;
         double y;
         Color color;

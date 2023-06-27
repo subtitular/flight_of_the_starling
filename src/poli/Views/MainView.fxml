@@ -105,7 +105,7 @@
                 </TitledPane>
               </panes>
             </Accordion>
-            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </root>
