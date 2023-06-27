@@ -6,6 +6,7 @@ package poli.Views;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -23,9 +24,12 @@ import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import poli.Models.Herd;
+import poli.Models.Point;
 /**
  *
  * @author subti
@@ -33,17 +37,24 @@ import javafx.util.Duration;
 public class MainView extends Application implements Initializable {
     @FXML
     private Canvas canvas;
+    @FXML
+    private Slider cantidadSlider;
+    @FXML
+    private Button playButton;
     
     private double centerX;
     private double centerY;
     private double angle;
+    private int cantidad;
     
+    private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
         /*Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();*/
         //System.out.println(getClass());
+        
         BorderPane root = new BorderPane();
 
         //Scene scene = new Scene(root, 800, 600);
@@ -95,13 +106,14 @@ public class MainView extends Application implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        horda = new Herd();
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         angle = 0.0;
         System.out.println("Inicializa controller MainView");
 
         // Crear la animación para actualizar el punto en cada fotograma
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(160), event -> {
             update();
             draw();
         }));
@@ -123,9 +135,20 @@ public class MainView extends Application implements Initializable {
         double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
         double x = centerX + radius * Math.cos(angle);
         double y = centerY + radius * Math.sin(angle);
-
+        
+        
         gc.setFill(Color.GRAY);
         gc.fillOval(x - 5, y - 5, 10, 10);
+        ArrayList<Point> puntos = horda.getPoints();
+        for(Point point:puntos){
+            gc.fillOval(point.getPositionX() - 5, point.getPositionY() - 5, 10, 10);
+        }
     }
-    
+    public void playPressed()
+    {
+        cantidad = (int)cantidadSlider.getValue();
+	horda = new Herd();
+	horda.Create(cantidad, canvas.getWidth(),canvas.getHeight());
+        
+    }
 }

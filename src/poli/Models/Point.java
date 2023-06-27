@@ -10,6 +10,7 @@ package poli.Models;
  */
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 public class Point {
     private double positionX;
     private double positionY;
@@ -38,5 +39,11 @@ public class Point {
     }
     public void setForm(String form) {
         this.form = form;
+    }
+    public void InitRandomPosition(double canvasWith,double canvasHeight)
+    {
+        Random random = new Random();
+        this.positionX = random.nextDouble() * canvasWith;
+        this.positionY = random.nextDouble() * canvasHeight;
     }
 }
