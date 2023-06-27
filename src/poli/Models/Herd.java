@@ -12,19 +12,19 @@ import java.util.List;
  * @author subti
  */
 public class Herd {
-    private ArrayList<Point> points;
+    private ArrayList<Point> points  = new ArrayList<Point>();;
       
     
     public Herd(){
-        points = new ArrayList<Point>();
     }
     public void Create(int cantidad, double width, double height){
+        points.clear();
         for(int i=0;i<cantidad;cantidad++){
             Point point = new Point();
             point.InitRandomPosition(width, height);
             points.add(point);
         }
-       
+        System.out.println(points.size());
         
     }
 
