@@ -40,16 +40,20 @@ public class MainView extends Application implements Initializable {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
+        /*Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();*/
         //System.out.println(getClass());
         BorderPane root = new BorderPane();
 
-        Scene scene = new Scene(root, 800, 600);
+        //Scene scene = new Scene(root, 800, 600);
+        Scene scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
         primaryStage.setMaximized(true);
         //primaryStage.setFullScreen(true);
         primaryStage.setScene(scene);
         primaryStage.setTitle("El Vuelo de los Estorninos");
         
-        scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        //scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
         //root. = root.load();
         
         //Scene scene = new Scene(root, 800, 600);
@@ -94,6 +98,7 @@ public class MainView extends Application implements Initializable {
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         angle = 0.0;
+        System.out.println("Inicializa controller MainView");
 
         // Crear la animación para actualizar el punto en cada fotograma
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {
