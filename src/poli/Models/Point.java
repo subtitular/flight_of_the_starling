@@ -11,26 +11,26 @@ package poli.Models;
 import java.util.HashMap;
 import java.util.Map;
 public class Point {
-    private String positionX;
-    private String positionY;
-    private String size;
+    private double positionX;
+    private double positionY;
+    private double size;
     private String form;
-    public String getPositionX() {
+    public double getPositionX() {
         return positionX;
     }
-    public void setPositionX(String positionX) {
+    public void setPositionX(double positionX) {
         this.positionX = positionX;
     }
-    public String getPositionY() {
+    public double getPositionY() {
         return positionY;
     }
-    public void setPositionY(String positionY) {
+    public void setPositionY(double positionY) {
         this.positionY = positionY;
     }
-    public String getSize() {
+    public double getSize() {
         return size;
     }
-    public void setSize(String size) {
+    public void setSize(double size) {
         this.size = size;
     }
     public String getForm() {

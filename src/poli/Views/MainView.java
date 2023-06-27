@@ -110,7 +110,7 @@ public class MainView extends Application implements Initializable {
     }
 
     private void update() {
-        angle += 0.05;
+        angle += 0.01;
         if (angle > 2 * Math.PI) {
             angle -= 2 * Math.PI;
         }
@@ -124,7 +124,7 @@ public class MainView extends Application implements Initializable {
         double x = centerX + radius * Math.cos(angle);
         double y = centerY + radius * Math.sin(angle);
 
-        gc.setFill(Color.RED);
+        gc.setFill(Color.GRAY);
         gc.fillOval(x - 5, y - 5, 10, 10);
     }
     
