@@ -21,7 +21,7 @@
    <root>
       <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="613.0" prefWidth="900.0">
          <children>
-            <Accordion prefHeight="523.0" prefWidth="204.0">
+            <Accordion prefHeight="613.0" prefWidth="233.0">
               <panes>
                 <TitledPane animated="false" text="Usuario Yo">
                   <content>
@@ -106,9 +106,9 @@
                 </TitledPane>
               </panes>
             </Accordion>
-            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+            <Pane prefHeight="681.0" prefWidth="689.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Canvas fx:id="canvas" height="613.0" width="702.0" />
+                  <Canvas fx:id="canvas" height="720.0" nodeOrientation="INHERIT" width="1268.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children></Pane>
          </children>
       </HBox>

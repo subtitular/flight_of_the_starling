@@ -31,6 +31,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import poli.Models.Herd;
+import poli.Models.MovingPoint;
 import poli.Models.Point;
 /**
  *
@@ -49,7 +50,7 @@ public class MainView extends Application implements Initializable {
     private double angle;
     private int cantidad;
     
-    private Point[] points = new Point[1000]; 
+    private MovingPoint[] movingPoints = new MovingPoint[1000]; 
     private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -118,10 +119,10 @@ public class MainView extends Application implements Initializable {
         
         gc = canvas.getGraphicsContext2D();
         for (int i = 0; i < 1000; i++) {
-            points[i] = new Point();
+            movingPoints[i] = new MovingPoint();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
-            points[i].InitRandomPosition(centerX* 2, centerX*2);
+            movingPoints[i].InitRandomPosition(centerX* 2, centerX*2);
             
         }
         // Crear la animación para actualizar el punto en cada fotograma
@@ -139,10 +140,10 @@ public class MainView extends Application implements Initializable {
             angle -= 2 * Math.PI;
         }
         for (int i = 0; i < 1000; i++) {
-            points[i] = new Point();
+            movingPoints[i] = new MovingPoint();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
-            points[i].InitRandomPosition(centerX* 2, centerX*2);
+            movingPoints[i].InitRandomPosition(centerX* 2, centerX*2);
             
         }
     }
@@ -159,7 +160,7 @@ public class MainView extends Application implements Initializable {
         gc.setFill(Color.GRAY);
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
         //ArrayList<Point> puntos = horda.getPoints();
-        for(Point point:points){
+        for(Point point:movingPoints){
             gc.fillOval(point.getPositionX() - 5, point.getPositionY() - 5, 10, 10);
         }
     }
