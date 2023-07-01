@@ -12,47 +12,49 @@ package poli.Models;
 import java.util.HashMap;
 import java.util.Map;
 public class MovingPoint extends Point {
-    private String speed;
-    private String direction;
-    private String scale;
-    private String opacity;
-    private String state;
-    private String interpolation;
+    private double speed;
+    private double direction;
+    private double scale;
+    private double opacity;
+    private double state;
+    private double interpolation;
     
-    public String getSpeed() {
+    public double getSpeed() {
         return speed;
     }
-    public void setSpeed(String speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
-    public String getDirection() {
+    public double getDirection() {
         return direction;
     }
-    public void setDirection(String direction) {
+    public void setDirection(double direction) {
         this.direction = direction;
     }
-    public String getScale() {
+    public double getScale() {
         return scale;
     }
-    public void setScale(String scale) {
+    public void setScale(double scale) {
         this.scale = scale;
     }
-    public String getOpacity() {
+    public double getOpacity() {
         return opacity;
     }
-    public void setOpacity(String opacity) {
+    public void setOpacity(double opacity) {
         this.opacity = opacity;
     }
-    public String getState() {
+    public double getState() {
         return state;
     }
-    public void setState(String state) {
+    public void setState(double state) {
         this.state = state;
     }
-    public String getInterpolation() {
+    public double getInterpolation() {
         return interpolation;
     }
-    public void setInterpolation(String interpolation) {
+    public void setInterpolation(double interpolation) {
         this.interpolation = interpolation;
     }
+    
+    
 }
