@@ -50,7 +50,7 @@ public class MainView extends Application implements Initializable {
     private double angle;
     private int cantidad;
     
-    private MovingPoint[] movingPoints = new MovingPoint[1000]; 
+    private MovingPoint[] movingPoints = new MovingPoint[10000]; 
     private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -118,7 +118,7 @@ public class MainView extends Application implements Initializable {
         
         
         gc = canvas.getGraphicsContext2D();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10000-1; i++) {
             movingPoints[i] = new MovingPoint();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
@@ -139,7 +139,7 @@ public class MainView extends Application implements Initializable {
         if (angle > 2 * Math.PI) {
             angle -= 2 * Math.PI;
         }
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < cantidad-1; i++) {
             //movingPoints[i] = new MovingPoint();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
@@ -159,15 +159,14 @@ public class MainView extends Application implements Initializable {
         
         gc.setFill(Color.GRAY);
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
-        for(Point point:movingPoints){
-            gc.fillOval(point.getPositionX() - 5, point.getPositionY() - 5, 3, 3);
+        for (int i = 0; i < cantidad-1; i++) {
+                      
+            gc.fillOval(movingPoints[i].getPositionX() - 5, movingPoints[i].getPositionY() - 5, 3, 3);
         }
     }
     public void playPressed()
     {
         cantidad = (int)cantidadSlider.getValue();
-	horda = new Herd();
-	horda.Create(cantidad, canvas.getWidth(),canvas.getHeight());
-        
+	        
     }
 }
