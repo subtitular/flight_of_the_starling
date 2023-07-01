@@ -119,8 +119,10 @@ public class MainView extends Application implements Initializable {
         gc = canvas.getGraphicsContext2D();
         for (int i = 0; i < 10; i++) {
             points[i] = new Point();
-            points[i].setPositionX(random.nextDouble() * centerX *2);
-            points[i].setPositionY(random.nextDouble() * centerY*2);
+            //points[i].setPositionX(random.nextDouble() * centerX *2);
+            //points[i].setPositionY(random.nextDouble() * centerY*2);
+            points[i].InitRandomPosition(centerX* 2, centerX*2);
+            
         }
         // Crear la animación para actualizar el punto en cada fotograma
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {
@@ -135,6 +137,13 @@ public class MainView extends Application implements Initializable {
         angle += 0.01;
         if (angle > 2 * Math.PI) {
             angle -= 2 * Math.PI;
+        }
+        for (int i = 0; i < 10; i++) {
+            points[i] = new Point();
+            //points[i].setPositionX(random.nextDouble() * centerX *2);
+            //points[i].setPositionY(random.nextDouble() * centerY*2);
+            points[i].InitRandomPosition(centerX* 2, centerX*2);
+            
         }
     }
     GraphicsContext gc;
