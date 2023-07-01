@@ -110,10 +110,9 @@ public class MainView extends Application implements Initializable {
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         angle = 0.0;
-        System.out.println("Inicializa controller MainView");
-
+        gc = canvas.getGraphicsContext2D();
         // Crear la animación para actualizar el punto en cada fotograma
-        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(160), event -> {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {
             update();
             draw();
         }));
@@ -127,18 +126,18 @@ public class MainView extends Application implements Initializable {
             angle -= 2 * Math.PI;
         }
     }
-
+    GraphicsContext gc;
     private void draw() {
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
-        double x = centerX + radius * Math.cos(angle);
-        double y = centerY + radius * Math.sin(angle);
+        double x1 = centerX + radius * Math.cos(angle);
+        double y1 = centerY + radius * Math.sin(angle);
         
         
         gc.setFill(Color.GRAY);
-        gc.fillOval(x - 5, y - 5, 10, 10);
+        gc.fillOval(x1 - 5, y1 - 5, 10, 10);
         ArrayList<Point> puntos = horda.getPoints();
         for(Point point:puntos){
             gc.fillOval(point.getPositionX() - 5, point.getPositionY() - 5, 10, 10);
