@@ -49,7 +49,7 @@ public class MainView extends Application implements Initializable {
     private double angle;
     private int cantidad;
     
-    private Point[] points = new Point[10]; 
+    private Point[] points = new Point[1000]; 
     private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -117,7 +117,7 @@ public class MainView extends Application implements Initializable {
         
         
         gc = canvas.getGraphicsContext2D();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000; i++) {
             points[i] = new Point();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
@@ -138,7 +138,7 @@ public class MainView extends Application implements Initializable {
         if (angle > 2 * Math.PI) {
             angle -= 2 * Math.PI;
         }
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000; i++) {
             points[i] = new Point();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
