@@ -14,24 +14,24 @@ import java.util.Map;
 
 public class FlyingObject extends MovingPoint {
     private String color;
-    private String speed;
-    private String direction;
+    private double speed;
+    private double direction;
     public String getColor() {
         return color;
     }
     public void setColor(String color) {
         this.color = color;
     }
-    public String getSpeed() {
+    public double getSpeed() {
         return speed;
     }
-    public void setSpeed(String speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
-    public String getDirection() {
+    public double getDirection() {
         return direction;
     }
-    public void setDirection(String direction) {
+    public void setDirection(double direction) {
         this.direction = direction;
     }
 }

@@ -16,6 +16,11 @@ public class Point {
     private double positionY;
     private double size;
     private String form;
+    Random random;
+    public Point(){
+        random = new Random();
+    }
+    
     public double getPositionX() {
         return positionX;
     }
@@ -40,9 +45,8 @@ public class Point {
     public void setForm(String form) {
         this.form = form;
     }
-    public void InitRandomPosition(double canvasWith,double canvasHeight)
-    {
-        Random random = new Random();
+    public void InitRandomPosition(double canvasWith,double canvasHeight){
+        
         this.positionX = random.nextDouble() * canvasWith;
         this.positionY = random.nextDouble() * canvasHeight;
     }

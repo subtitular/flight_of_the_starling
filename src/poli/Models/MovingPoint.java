@@ -11,6 +11,7 @@ package poli.Models;
  */
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 public class MovingPoint extends Point {
     private double speed;
     private double direction;
@@ -55,6 +56,22 @@ public class MovingPoint extends Point {
     public void setInterpolation(double interpolation) {
         this.interpolation = interpolation;
     }
+    @Override 
+    public void InitRandomPosition(double canvasWith,double canvasHeight){
+        super.InitRandomPosition(canvasWith,canvasHeight);
+        this.direction = random.nextDouble() * 2 * Math.PI;
+        this.speed = random.nextDouble() * 100;
+    }
     
+    public void NextPosition(){
+        double x = getPositionX();
+        double y = getPositionY();
+        x = x + x * Math.cos(direction)*0.1;
+        y = y + y * Math.sin(direction)*0.1;
+        setPositionX(x);
+        setPositionY(y);
+        direction += 0.1;
+    }
+      
     
 }
