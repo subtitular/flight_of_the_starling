@@ -7,7 +7,9 @@ package poli.Views;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -47,6 +49,7 @@ public class MainView extends Application implements Initializable {
     private double angle;
     private int cantidad;
     
+    private Point[] points = new Point[10]; 
     private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -110,7 +113,15 @@ public class MainView extends Application implements Initializable {
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         angle = 0.0;
+        Random random = new Random();
+        
+        
         gc = canvas.getGraphicsContext2D();
+        for (int i = 0; i < 10; i++) {
+            points[i] = new Point();
+            points[i].setPositionX(random.nextDouble() * centerX *2);
+            points[i].setPositionY(random.nextDouble() * centerY*2);
+        }
         // Crear la animación para actualizar el punto en cada fotograma
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {
             update();
@@ -138,8 +149,8 @@ public class MainView extends Application implements Initializable {
         
         gc.setFill(Color.GRAY);
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
-        ArrayList<Point> puntos = horda.getPoints();
-        for(Point point:puntos){
+        //ArrayList<Point> puntos = horda.getPoints();
+        for(Point point:points){
             gc.fillOval(point.getPositionX() - 5, point.getPositionY() - 5, 10, 10);
         }
     }
