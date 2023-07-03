@@ -86,7 +86,7 @@ public class MovingPoint extends Point {
         setPositionX(x);
         setPositionY(y);
         direction += deltaDirection;
-        System.out.println( x +" " +y+ "-- " +deltaDirectionX +"  " + deltaDirectionY );
+        //System.out.println( x +" " +y+ "-- " +deltaDirectionX +"  " + deltaDirectionY );
     }
       
     

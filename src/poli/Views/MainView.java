@@ -27,8 +27,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 import poli.Models.Herd;
 import poli.Models.MovingPoint;
@@ -50,10 +53,13 @@ public class MainView extends Application implements Initializable {
     private double centerY;
     private double angle;
     private int cantidad;
-    private final int MAX_STARLINGS = 100;
+    private final int MAX_STARLINGS = 10000;
     
     private Starling[] starlings = new Starling[MAX_STARLINGS]; 
     private Herd horda;
+    private Image image;
+    @FXML
+    private ImageView imageView;
     @Override
     public void start(Stage primaryStage) throws IOException {
         /*Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
@@ -112,6 +118,9 @@ public class MainView extends Application implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //String path = getClass().getClass().getResourceAsStream(
+        image = new Image("poli/Assets/images/a.jpg");
+        imageView.setImage(image);
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         double maxX = canvas.getWidth();
@@ -129,6 +138,7 @@ public class MainView extends Application implements Initializable {
         
         
         gc = canvas.getGraphicsContext2D();
+        //gc.drawImage(image, 0, 0);
         //starlings = (Starling[]) horda.getBirds();
         for (int i = 0; i < MAX_STARLINGS-1; i++) {
             starlings[i] = new Starling(random);
@@ -158,9 +168,8 @@ public class MainView extends Application implements Initializable {
     }
     GraphicsContext gc;
     private void draw() {
-        
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-
+        gc.drawImage(image, 0, 0);
         double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
         
         double x1 = centerX + radius * Math.cos(angle);
@@ -174,6 +183,7 @@ public class MainView extends Application implements Initializable {
             gc.fillOval(starlings[i].getPositionX() - 5, starlings[i].getPositionY() - 5, 3, 3);
         }
     }
+    @FXML
     public void playPressed()
     {
         cantidad = (int)cantidadSlider.getValue();        
