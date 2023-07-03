@@ -33,6 +33,7 @@ import javafx.util.Duration;
 import poli.Models.Herd;
 import poli.Models.MovingPoint;
 import poli.Models.Point;
+import poli.Models.Starling;
 /**
  *
  * @author subti
@@ -50,7 +51,7 @@ public class MainView extends Application implements Initializable {
     private double angle;
     private int cantidad;
     
-    private MovingPoint[] movingPoints = new MovingPoint[10000]; 
+    private Starling[] starlings = new Starling[10000]; 
     private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -125,10 +126,10 @@ public class MainView extends Application implements Initializable {
         
         gc = canvas.getGraphicsContext2D();
         for (int i = 0; i < 10000-1; i++) {
-            movingPoints[i] = new MovingPoint(random);
+            starlings[i] = new Starling(random);
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
-            movingPoints[i].InitRandomPosition(centerX* 2, centerX*2);
+            starlings[i].InitRandomPosition(centerX* 2, centerX*2);
             
         }
         // Crear la animación para actualizar el punto en cada fotograma
@@ -150,7 +151,7 @@ public class MainView extends Application implements Initializable {
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
             //movingPoints[i].InitRandomPosition(centerX* 2, centerX*2);
-            movingPoints[i].NextPosition();
+            starlings[i].NextPosition();
         }
     }
     GraphicsContext gc;
@@ -167,7 +168,7 @@ public class MainView extends Application implements Initializable {
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
         for (int i = 0; i < cantidad-1; i++) {
                       
-            gc.fillOval(movingPoints[i].getPositionX() - 5, movingPoints[i].getPositionY() - 5, 3, 3);
+            gc.fillOval(starlings[i].getPositionX() - 5, starlings[i].getPositionY() - 5, 3, 3);
         }
     }
     public void playPressed()
