@@ -12,16 +12,22 @@ package poli.Models;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import javafx.scene.paint.Color;
 
 public class FlyingObject extends MovingPoint {
-    private String color;
+    private Color color;
     private double speed;
     private double direction;
     private double size;
     private String form;
+    private double tono;
 
     public FlyingObject(Random random) {
         super(random);
+        tono = Math.abs(random.nextGaussian(0.5,0.2));
+        if(tono> 1.0) tono = 1.0 - (tono%1.0);
+        
+        color = new Color(tono,tono,tono,1.0);
     }
     public double getSize() {
         return size;
@@ -35,10 +41,10 @@ public class FlyingObject extends MovingPoint {
     public void setForm(String form) {
         this.form = form;
     }
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
     public double getSpeed() {

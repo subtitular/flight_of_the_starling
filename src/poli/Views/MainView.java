@@ -166,10 +166,10 @@ public class MainView extends Application implements Initializable {
         double y1 = centerY + radius * Math.sin(angle);
         
         
-        gc.setFill(Color.GRAY);
+        
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
         for (int i = 0; i < cantidad-1; i++) {
-                      
+            gc.setFill(starlings[i].getColor());          
             gc.fillOval(starlings[i].getPositionX() - 5, starlings[i].getPositionY() - 5, 3, 3);
         }
     }
