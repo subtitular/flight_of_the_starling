@@ -12,24 +12,25 @@ import java.util.Random;
  *
  * @author subti
  */
-public class Herd {
-    private ArrayList<Point> points;
-      
+public class Herd<T extends SocialFlyingAnimal> {
+    private T[] birds;
+    private int total;
     
-    public Herd(){
-        points = new ArrayList<Point>();
+    public Herd(int max){
+        total = max;
+        birds = (T[]) new SocialFlyingAnimal[total];
     }
-    public void Create(int cantidad, double width, double height, Random random){
-        for(int i=0;i<cantidad;cantidad++){
-            Point point = new Point(random);
-            point.InitRandomPosition(width, height);
-            points.add(point);
+    public void Create(double width, double height, Random random){
+        for(int i=0;i<total - 1;total++){
+            SocialFlyingAnimal bird = new SocialFlyingAnimal(random);
+            bird.InitRandomPosition(width, height);
+            birds[i] = (T) bird;
         }
        
         
     }
 
-    public ArrayList<Point> getPoints() {
-        return points; 
+    public SocialFlyingAnimal[] getBirds() {
+        return birds; 
     }
 }

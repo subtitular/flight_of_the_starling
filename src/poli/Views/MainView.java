@@ -50,9 +50,10 @@ public class MainView extends Application implements Initializable {
     private double centerY;
     private double angle;
     private int cantidad;
+    private final int MAX_STARLINGS = 10000;
     
-    private Starling[] starlings = new Starling[10000]; 
-    private Herd horda;
+    private Starling[] starlings = new Starling[MAX_STARLINGS]; 
+    //private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
         /*Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
@@ -111,11 +112,12 @@ public class MainView extends Application implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        horda = new Herd();
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         angle = 0.0;
         Random random = new Random();
+        //horda = new Herd<Starling>(MAX_STARLINGS);
+        //horda.Create(canvas.getWidth(),canvas.getHeight(),random );
         
         cantidadSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             cantidad = (int)cantidadSlider.getValue();
@@ -125,7 +127,8 @@ public class MainView extends Application implements Initializable {
         
         
         gc = canvas.getGraphicsContext2D();
-        for (int i = 0; i < 10000-1; i++) {
+        //starlings = (Starling[]) horda.getBirds();
+        for (int i = 0; i < MAX_STARLINGS-1; i++) {
             starlings[i] = new Starling(random);
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
