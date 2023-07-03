@@ -15,14 +15,14 @@ classDiagram
     SocialFlyingAnimal <|-- Starling
     Herd--*SocialFlyingAnimal
     class Point{
-
-    }
-    class MovingPoint{
         +double x
         +double y
         +getPositionY()
         +getPositionX()
         +InitRandomPosition()
+    }
+    class MovingPoint{
+        
     }
     class FlyingPoint{
 
