@@ -17,8 +17,8 @@ public class Point {
     private double size;
     private String form;
     Random random;
-    public Point(){
-        random = new Random();
+    public Point(Random random){
+        this.random = random;
     }
     
     public double getPositionX() {

@@ -125,7 +125,7 @@ public class MainView extends Application implements Initializable {
         
         gc = canvas.getGraphicsContext2D();
         for (int i = 0; i < 10000-1; i++) {
-            movingPoints[i] = new MovingPoint();
+            movingPoints[i] = new MovingPoint(random);
             //points[i].setPositionX(random.nextDouble() * centerX *2);
             //points[i].setPositionY(random.nextDouble() * centerY*2);
             movingPoints[i].InitRandomPosition(centerX* 2, centerX*2);

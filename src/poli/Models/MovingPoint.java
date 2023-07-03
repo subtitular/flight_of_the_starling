@@ -11,6 +11,7 @@ package poli.Models;
  */
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 public class MovingPoint extends Point {
     private double speed;
@@ -19,6 +20,10 @@ public class MovingPoint extends Point {
     private double opacity;
     private double state;
     private double interpolation;
+
+    public MovingPoint(Random random) {
+        super(random);
+    }
     
     public double getSpeed() {
         return speed;
