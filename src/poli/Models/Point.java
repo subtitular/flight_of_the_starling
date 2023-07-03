@@ -32,9 +32,9 @@ public class Point {
     public void setPositionY(double positionY) {
         this.positionY = positionY;
     }
-    public void InitRandomPosition(double canvasWith,double canvasHeight){
+    public void InitRandomPosition(double canvasWidth,double canvasHeight){
         
-        this.positionX = random.nextDouble() * canvasWith;
-        this.positionY = random.nextDouble() * canvasHeight;
+        this.positionX = random.nextGaussian( canvasWidth/2,canvasWidth/4) ;
+        this.positionY = random.nextGaussian( canvasWidth/2,canvasWidth/4) ;
     }
 }
