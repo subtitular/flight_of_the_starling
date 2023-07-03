@@ -36,5 +36,6 @@ public class Point {
         
         this.positionX = random.nextDouble() * canvasWidth;
         this.positionY = random.nextDouble() * canvasHeight ;
+       
     }
 }

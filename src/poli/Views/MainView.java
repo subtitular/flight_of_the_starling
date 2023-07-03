@@ -50,7 +50,7 @@ public class MainView extends Application implements Initializable {
     private double centerY;
     private double angle;
     private int cantidad;
-    private final int MAX_STARLINGS = 10000;
+    private final int MAX_STARLINGS = 100;
     
     private Starling[] starlings = new Starling[MAX_STARLINGS]; 
     private Herd horda;
@@ -162,6 +162,7 @@ public class MainView extends Application implements Initializable {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
+        
         double x1 = centerX + radius * Math.cos(angle);
         double y1 = centerY + radius * Math.sin(angle);
         

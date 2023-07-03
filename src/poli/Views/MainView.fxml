@@ -41,7 +41,7 @@
                               <Slider layoutX="161.0" layoutY="387.0" orientation="VERTICAL" prefHeight="104.0" prefWidth="14.0" value="35.0" />
                               <Label layoutX="115.0" layoutY="495.0" text="Volumen" />
                               <ProgressBar layoutX="6.0" layoutY="446.0" prefHeight="18.0" prefWidth="136.0" progress="0.4" />
-                              <Slider fx:id="cantidadSlider" layoutX="64.0" layoutY="125.0" max="10000.0" />
+                              <Slider fx:id="cantidadSlider" layoutX="64.0" layoutY="125.0" />
                               <Label layoutX="7.0" layoutY="125.0" text="Cantidad" />
                               <Button fx:id="playButton" layoutX="135.0" layoutY="159.0" mnemonicParsing="false" onAction="#playPressed" text="Play" />
                            </children></AnchorPane>

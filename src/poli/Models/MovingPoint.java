@@ -29,7 +29,7 @@ public class MovingPoint extends Point {
     public MovingPoint(Random random) {
         super(random);
         deltaDirection=random.nextGaussian(0.01,0.005);
-        deltaRadio = random.nextGaussian(0.4,0.2);
+        deltaRadio = random.nextGaussian(1,0.2);
         deltaDirectionX = random.nextGaussian(deltaRadio,0.05);
         deltaDirectionY = random.nextGaussian(deltaRadio,0.05);
         deltaSpeed = random.nextGaussian(50,10);
@@ -86,6 +86,7 @@ public class MovingPoint extends Point {
         setPositionX(x);
         setPositionY(y);
         direction += deltaDirection;
+        System.out.println( x +" " +y+ "-- " +deltaDirectionX +"  " + deltaDirectionY );
     }
       
     
