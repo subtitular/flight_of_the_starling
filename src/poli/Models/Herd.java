@@ -6,6 +6,7 @@ package poli.Models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -18,9 +19,9 @@ public class Herd {
     public Herd(){
         points = new ArrayList<Point>();
     }
-    public void Create(int cantidad, double width, double height){
+    public void Create(int cantidad, double width, double height, Random random){
         for(int i=0;i<cantidad;cantidad++){
-            Point point = new Point();
+            Point point = new Point(random);
             point.InitRandomPosition(width, height);
             points.add(point);
         }

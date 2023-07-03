@@ -10,6 +10,7 @@ package poli.Models;
  */
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 public class SocialFlyingAnimal extends FlyingObject  {
     private String leadershipLevel;
     private String cooperationLevel;
@@ -17,6 +18,10 @@ public class SocialFlyingAnimal extends FlyingObject  {
     private String communicationLevel;
     private String socialBondingLevel;
     private String consensusLevel;
+
+    public SocialFlyingAnimal(Random random) {
+        super(random);
+    }
     public String getLeadershipLevel() {
         return leadershipLevel;
     }

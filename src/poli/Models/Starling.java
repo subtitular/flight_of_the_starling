@@ -11,6 +11,7 @@ package poli.Models;
  */
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 public class Starling extends SocialFlyingAnimal {
     private String group;
     private String energyLevel;
@@ -18,6 +19,10 @@ public class Starling extends SocialFlyingAnimal {
     private String agilityLevel;
     private String explorationLevel;
     private String playfulnessLevel;
+
+    public Starling(Random random) {
+        super(random);
+    }
     public String getGroup() {
         return group;
     }
