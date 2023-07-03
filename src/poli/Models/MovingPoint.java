@@ -66,11 +66,11 @@ public class MovingPoint extends Point {
     public void NextPosition(){
         double x = getPositionX();
         double y = getPositionY();
-        x = x + x * Math.cos(direction)*0.1;
-        y = y + y * Math.sin(direction)*0.1;
+        x = x +  Math.cos(direction)*0.1;
+        y = y +  Math.sin(direction)*0.1;
         setPositionX(x);
         setPositionY(y);
-        direction += 0.1;
+        direction += 0.01;
     }
       
     

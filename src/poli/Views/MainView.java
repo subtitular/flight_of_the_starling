@@ -116,6 +116,12 @@ public class MainView extends Application implements Initializable {
         angle = 0.0;
         Random random = new Random();
         
+        cantidadSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            cantidad = (int)cantidadSlider.getValue();
+            // Realiza las acciones que desees con el nuevo valor del slider
+        });
+        
+        
         
         gc = canvas.getGraphicsContext2D();
         for (int i = 0; i < 10000-1; i++) {
@@ -166,7 +172,6 @@ public class MainView extends Application implements Initializable {
     }
     public void playPressed()
     {
-        cantidad = (int)cantidadSlider.getValue();
-	        
+        cantidad = (int)cantidadSlider.getValue();        
     }
 }
