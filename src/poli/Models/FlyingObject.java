@@ -17,9 +17,23 @@ public class FlyingObject extends MovingPoint {
     private String color;
     private double speed;
     private double direction;
+    private double size;
+    private String form;
 
     public FlyingObject(Random random) {
         super(random);
+    }
+    public double getSize() {
+        return size;
+    }
+    public void setSize(double size) {
+        this.size = size;
+    }
+    public String getForm() {
+        return form;
+    }
+    public void setForm(String form) {
+        this.form = form;
     }
     public String getColor() {
         return color;

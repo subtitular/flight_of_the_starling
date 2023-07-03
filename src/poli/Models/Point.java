@@ -14,8 +14,7 @@ import java.util.Random;
 public class Point {
     private double positionX;
     private double positionY;
-    private double size;
-    private String form;
+
     Random random;
     public Point(Random random){
         this.random = random;
@@ -32,18 +31,6 @@ public class Point {
     }
     public void setPositionY(double positionY) {
         this.positionY = positionY;
-    }
-    public double getSize() {
-        return size;
-    }
-    public void setSize(double size) {
-        this.size = size;
-    }
-    public String getForm() {
-        return form;
-    }
-    public void setForm(String form) {
-        this.form = form;
     }
     public void InitRandomPosition(double canvasWith,double canvasHeight){
         
