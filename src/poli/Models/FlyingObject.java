@@ -11,11 +11,16 @@ package poli.Models;
  */
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class FlyingObject extends MovingPoint {
     private String color;
     private double speed;
     private double direction;
+
+    public FlyingObject(Random random) {
+        super(random);
+    }
     public String getColor() {
         return color;
     }
