@@ -53,7 +53,7 @@ public class MainView extends Application implements Initializable {
     private final int MAX_STARLINGS = 10000;
     
     private Starling[] starlings = new Starling[MAX_STARLINGS]; 
-    //private Herd horda;
+    private Herd horda;
     @Override
     public void start(Stage primaryStage) throws IOException {
         /*Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
@@ -114,10 +114,12 @@ public class MainView extends Application implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
+        double maxX = canvas.getWidth();
+        double maxY = canvas.getHeight();
         angle = 0.0;
         Random random = new Random();
         //horda = new Herd<Starling>(MAX_STARLINGS);
-        //horda.Create(canvas.getWidth(),canvas.getHeight(),random );
+        //horda.Create(maxX,maxY,random );
         
         cantidadSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             cantidad = (int)cantidadSlider.getValue();
@@ -130,10 +132,7 @@ public class MainView extends Application implements Initializable {
         //starlings = (Starling[]) horda.getBirds();
         for (int i = 0; i < MAX_STARLINGS-1; i++) {
             starlings[i] = new Starling(random);
-            //points[i].setPositionX(random.nextDouble() * centerX *2);
-            //points[i].setPositionY(random.nextDouble() * centerY*2);
-            starlings[i].InitRandomPosition(centerX* 2, centerX*2);
-            
+            starlings[i].InitRandomPosition(maxX, maxY);
         }
         // Crear la animación para actualizar el punto en cada fotograma
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {

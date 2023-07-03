@@ -20,9 +20,19 @@ public class MovingPoint extends Point {
     private double opacity;
     private double state;
     private double interpolation;
+    private double deltaDirectionX;
+    private double deltaDirectionY;
+    private double deltaRadio;
+    private double deltaDirection;
+    private double deltaSpeed;
 
     public MovingPoint(Random random) {
         super(random);
+        deltaDirection=random.nextGaussian(0.01,0.005);
+        deltaRadio = random.nextGaussian(0.4,0.2);
+        deltaDirectionX = random.nextGaussian(deltaRadio,0.05);
+        deltaDirectionY = random.nextGaussian(deltaRadio,0.05);
+        deltaSpeed = random.nextGaussian(50,10);
     }
     
     public double getSpeed() {
@@ -65,17 +75,17 @@ public class MovingPoint extends Point {
     public void InitRandomPosition(double canvasWith,double canvasHeight){
         super.InitRandomPosition(canvasWith,canvasHeight);
         this.direction = random.nextDouble() * 2 * Math.PI;
-        this.speed = random.nextDouble() * 100;
+        this.speed = random.nextDouble() * deltaSpeed;
     }
     
     public void NextPosition(){
         double x = getPositionX();
         double y = getPositionY();
-        x = x +  Math.cos(direction)*0.1;
-        y = y +  Math.sin(direction)*0.1;
+        x = x +  Math.cos(direction)* deltaDirectionX;
+        y = y +  Math.sin(direction)*deltaDirectionY;
         setPositionX(x);
         setPositionY(y);
-        direction += 0.01;
+        direction += deltaDirection;
     }
       
     
