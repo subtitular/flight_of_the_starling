@@ -25,11 +25,14 @@ public class MovingPoint extends Point {
     private double deltaRadio;
     private double deltaDirection;
     private double deltaSpeed;
+    private double centerX = 0.0;
+    private double centerY = 0.0;
 
     public MovingPoint(Random random) {
         super(random);
         deltaDirection=random.nextGaussian(0.01,0.005);
-        deltaRadio = random.nextGaussian(1,0.2);
+        deltaRadio = random.nextGaussian(200,40);
+        //System.out.println(deltaRadio);
         deltaDirectionX = random.nextGaussian(deltaRadio,0.05);
         deltaDirectionY = random.nextGaussian(deltaRadio,0.05);
         deltaSpeed = random.nextGaussian(50,10);
@@ -74,15 +77,21 @@ public class MovingPoint extends Point {
     @Override 
     public void InitRandomPosition(double canvasWith,double canvasHeight){
         super.InitRandomPosition(canvasWith,canvasHeight);
+        centerX=super.getPositionX();
+        centerY = super.getPositionY();
+        //System.out.println("Moving " +centerX +" "+ centerY);
         this.direction = random.nextDouble() * 2 * Math.PI;
         this.speed = random.nextDouble() * deltaSpeed;
     }
-    
+    //double maxx = 0.0;
+    //double maxy = 0.0;
     public void NextPosition(){
-        double x = getPositionX();
-        double y = getPositionY();
-        x = x +  Math.cos(direction)* deltaDirectionX;
-        y = y +  Math.sin(direction)*deltaDirectionY;
+        //double x = getPositionX();
+        //double y = getPositionY();
+        double x = centerX +  Math.cos(direction)* deltaDirectionX;
+        double y = centerY +  Math.sin(direction)*deltaDirectionY;
+        //if(y>=maxy)maxy=y;
+        //if(x>=maxx)maxx=x;
         setPositionX(x);
         setPositionY(y);
         direction += deltaDirection;

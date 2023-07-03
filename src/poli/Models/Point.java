@@ -15,9 +15,14 @@ public class Point {
     private double positionX;
     private double positionY;
 
+    private int size;
+
+    
+    
     Random random;
     public Point(Random random){
         this.random = random;
+        this.size=random.nextInt(3,5);
     }
     
     public double getPositionX() {
@@ -34,8 +39,14 @@ public class Point {
     }
     public void InitRandomPosition(double canvasWidth,double canvasHeight){
         
-        this.positionX = random.nextDouble() * canvasWidth;
-        this.positionY = random.nextDouble() * canvasHeight ;
-       
+       this.positionX = random.nextGaussian(canvasWidth/2,canvasWidth/4);
+       this.positionY = random.nextGaussian( canvasHeight/2, canvasHeight/4);
+       // System.out.println(this.positionX +" "+ this.positionY);
+    }
+    public int getSize() {
+        return size;
+    }
+    public void setSize(int size) {
+        this.size = size;
     }
 }

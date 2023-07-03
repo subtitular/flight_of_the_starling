@@ -18,22 +18,16 @@ public class FlyingObject extends MovingPoint {
     private Color color;
     private double speed;
     private double direction;
-    private double size;
+    
     private String form;
     private double tono;
 
     public FlyingObject(Random random) {
         super(random);
-        tono = Math.abs(random.nextGaussian(0.5,0.2));
+        tono = Math.abs(random.nextGaussian(0.3,0.1));
         if(tono> 1.0) tono = 1.0 - (tono%1.0);
-        
-        color = new Color(tono,tono,tono,1.0);
-    }
-    public double getSize() {
-        return size;
-    }
-    public void setSize(double size) {
-        this.size = size;
+        tono= tono*(0.5+(super.getSize()/10));
+        color = new Color(tono,tono,tono,0.8);
     }
     public String getForm() {
         return form;

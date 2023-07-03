@@ -27,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Slider;
+import javafx.scene.effect.Effect;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -120,7 +121,31 @@ public class MainView extends Application implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //String path = getClass().getClass().getResourceAsStream(
         image = new Image("poli/Assets/images/b.jpg");
-        imageView.setImage(image);
+        if (image != null) {
+            double w = 0;
+            double h = 0;
+
+            double ratioX = imageView.getFitWidth() / image.getWidth();
+            double ratioY = imageView.getFitHeight() / image.getHeight();
+
+            double reducCoeff = 0;
+            if(ratioY >= ratioX) {
+                reducCoeff = ratioX;
+            } else {
+                reducCoeff = ratioX;
+            }
+
+            w = image.getWidth() * reducCoeff;
+            h = image.getHeight() * reducCoeff;
+
+            imageView.setX((imageView.getFitWidth() - w) / 2);
+            imageView.setY((imageView.getFitHeight() - h) / 2);
+            imageView.setImage(image);
+        }
+        
+        
+        //Effect effect = new Effect
+        //imageView.setEffect(effect);
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
         double maxX = canvas.getWidth();
@@ -169,7 +194,7 @@ public class MainView extends Application implements Initializable {
     GraphicsContext gc;
     private void draw() {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        gc.drawImage(image, 0, 0);
+        //gc.drawImage(image, 0, 0);
         double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
         
         double x1 = centerX + radius * Math.cos(angle);
@@ -180,7 +205,7 @@ public class MainView extends Application implements Initializable {
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
         for (int i = 0; i < cantidad-1; i++) {
             gc.setFill(starlings[i].getColor());          
-            gc.fillOval(starlings[i].getPositionX() - 5, starlings[i].getPositionY() - 5, 3, 3);
+            gc.fillOval(starlings[i].getPositionX() - 5, starlings[i].getPositionY() - 5, starlings[i].getSize(),starlings[i].getSize());
         }
     }
     @FXML

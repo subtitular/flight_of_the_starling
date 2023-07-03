@@ -107,7 +107,7 @@
             </Accordion>
 				<AnchorPane prefHeight="613.0" prefWidth="767.0" HBox.hgrow="ALWAYS">
 					<children>
-                  <ImageView fx:id="imageView" fitHeight="1080.0" fitWidth="1688.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageView" fitHeight="1080.0" fitWidth="1688.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 						<Canvas fx:id="canvas" height="1080.0" nodeOrientation="INHERIT" width="1688.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 				    </children>
 			    </AnchorPane>
