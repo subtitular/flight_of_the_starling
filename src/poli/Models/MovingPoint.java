@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import javafx.geometry.Point2D;
 public class MovingPoint extends Point {
     private double speed;
     private double direction;
@@ -25,8 +26,9 @@ public class MovingPoint extends Point {
     private double deltaRadio;
     private double deltaDirection;
     private double deltaSpeed;
-    private double centerX = 0.0;
-    private double centerY = 0.0;
+    /*private double centerX = 0.0;
+    private double centerY = 0.0;*/
+    public Point2D center;
 
     public MovingPoint(Random random) {
         super(random);
@@ -77,8 +79,9 @@ public class MovingPoint extends Point {
     @Override 
     public void InitRandomPosition(double canvasWith,double canvasHeight){
         super.InitRandomPosition(canvasWith,canvasHeight);
-        centerX=super.getPositionX();
-        centerY = super.getPositionY();
+        center = new Point2D(super.getPositionX(), super.getPositionY());
+        /*centerX=super.getPositionX();
+        centerY = super.getPositionY();*/
         //System.out.println("Moving " +centerX +" "+ centerY);
         this.direction = random.nextDouble() * 2 * Math.PI;
         this.speed = random.nextDouble() * deltaSpeed;
@@ -88,8 +91,8 @@ public class MovingPoint extends Point {
     public void NextPosition(){
         //double x = getPositionX();
         //double y = getPositionY();
-        double x = centerX +  Math.cos(direction)* deltaDirectionX;
-        double y = centerY +  Math.sin(direction)*deltaDirectionY;
+        double x = center.getX() +  Math.cos(direction)* deltaDirectionX;
+        double y = center.getY() +  Math.sin(direction)*deltaDirectionY;
         //if(y>=maxy)maxy=y;
         //if(x>=maxx)maxx=x;
         setPositionX(x);

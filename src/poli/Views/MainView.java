@@ -61,28 +61,16 @@ public class MainView extends Application implements Initializable {
     private Image image;
     @FXML
     private ImageView imageView;
+    @FXML
+    private Slider leadershipSlider;
+    double minLeadership =0.0;
     @Override
     public void start(Stage primaryStage) throws IOException {
-        /*Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();*/
-        //System.out.println(getClass());
-        
         BorderPane root = new BorderPane();
-
-        //Scene scene = new Scene(root, 800, 600);
         Scene scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
         primaryStage.setMaximized(true);
-        //primaryStage.setFullScreen(true);
         primaryStage.setScene(scene);
         primaryStage.setTitle("El Vuelo de los Estorninos");
-        
-        //scene = (Scene)FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        //root. = root.load();
-        
-        //Scene scene = new Scene(root, 800, 600);
-
-        // Configurar el escenario principal (Stage)
         primaryStage.setScene(scene);
         primaryStage.setTitle("El Vuelo de los Estorninos");
         primaryStage.setResizable(true);
@@ -152,14 +140,24 @@ public class MainView extends Application implements Initializable {
         double maxY = canvas.getHeight();
         angle = 0.0;
         Random random = new Random();
-        //horda = new Herd<Starling>(MAX_STARLINGS);
+        horda = new Herd(MAX_STARLINGS);
         //horda.Create(maxX,maxY,random );
         
         cantidadSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             cantidad = (int)cantidadSlider.getValue();
             // Realiza las acciones que desees con el nuevo valor del slider
         });
-        
+        leadershipSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            minLeadership = cantidadSlider.getValue();
+            if(minLeadership>horda.getMaxLeadership()) minLeadership=horda.getMaxLeadership();
+            // Realiza las acciones que desees con el nuevo valor del slider
+            for (int i = 0; i < MAX_STARLINGS-1; i++) {
+            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
+            if(!isLeader){
+                horda.searchLeader(starlings[i]);
+            }
+        }
+        });   
         
         
         gc = canvas.getGraphicsContext2D();
@@ -167,7 +165,9 @@ public class MainView extends Application implements Initializable {
         //starlings = (Starling[]) horda.getBirds();
         for (int i = 0; i < MAX_STARLINGS-1; i++) {
             starlings[i] = new Starling(random);
+            starlings[i].setId(i);
             starlings[i].InitRandomPosition(maxX, maxY);
+            horda.setLeadership(starlings[i]);
         }
         // Crear la animación para actualizar el punto en cada fotograma
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {

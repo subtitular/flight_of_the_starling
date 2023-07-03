@@ -12,22 +12,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 public class SocialFlyingAnimal extends FlyingObject  {
-    private String leadershipLevel;
+    private double leadershipLevel;
     private String cooperationLevel;
     private String synchronizationLevel;
     private String communicationLevel;
     private String socialBondingLevel;
     private String consensusLevel;
-
+    private SocialFlyingAnimal leader;
+    private double minLeadership  = 0.0;
+    
     public SocialFlyingAnimal(Random random) {
         super(random);
+        this.leadershipLevel = random.nextGaussian(1000,200);
+        if(this.leadershipLevel>2000) this.leadershipLevel = this.leadershipLevel%2000;
+        if(this.leadershipLevel<0) this.leadershipLevel=(-1) * (this.leadershipLevel%2000);
     }
-    public String getLeadershipLevel() {
+    public double getLeadershipLevel() {
         return leadershipLevel;
     }
-    public void setLeadershipLevel(String leadershipLevel) {
+    public boolean isLeader(){
+        return leadershipLevel >= minLeadership;
+    }
+    public boolean setMinLeadership(double minLeadership) {
+        this.minLeadership = minLeadership;
+        return leadershipLevel >= minLeadership;
+    }
+    public void setLeadershipLevel(double leadershipLevel) {
         this.leadershipLevel = leadershipLevel;
     }
+    public void setLeader(SocialFlyingAnimal b) {
+        leader = b;
+        System.out.println(b.getId());
+    }
+    
     public String getCooperationLevel() {
         return cooperationLevel;
     }

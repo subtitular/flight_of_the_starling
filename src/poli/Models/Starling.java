@@ -19,7 +19,7 @@ public class Starling extends SocialFlyingAnimal {
     private String agilityLevel;
     private String explorationLevel;
     private String playfulnessLevel;
-    private boolean isLeader;
+    
 
     public Starling(Random random) {
         super(random);
@@ -60,4 +60,8 @@ public class Starling extends SocialFlyingAnimal {
     public void setPlayfulnessLevel(String playfulnessLevel) {
         this.playfulnessLevel = playfulnessLevel;
     }
+
+
+
+
 }

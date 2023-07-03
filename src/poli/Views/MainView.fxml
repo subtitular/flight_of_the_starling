@@ -52,7 +52,7 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <Label layoutX="8.0" layoutY="6.0" text="Liderazgo" />
-                              <Slider layoutY="23.0" prefHeight="14.0" prefWidth="202.0" value="35.0" />
+                              <Slider fx:id="leadershipSlider" layoutY="23.0" max="200.0" prefHeight="14.0" prefWidth="202.0" />
                               <Label layoutY="37.0" prefHeight="46.0" prefWidth="201.0" text="Algunos estorninos pueden exhibir cualidades de liderazgo, tomando la delantera en los patrones de vuelo y guiando los movimientos del grupo" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
                                  <font>
                                     <Font size="8.0" />
@@ -108,7 +108,7 @@
 				<AnchorPane prefHeight="613.0" prefWidth="767.0" HBox.hgrow="ALWAYS">
 					<children>
                   <ImageView fx:id="imageView" fitHeight="1080.0" fitWidth="1688.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-						<Canvas fx:id="canvas" height="1080.0" nodeOrientation="INHERIT" width="1688.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+						<Canvas fx:id="canvas" height="1080.0" layoutX="36.0" layoutY="-25.0" nodeOrientation="INHERIT" width="1688.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="-36.0" AnchorPane.topAnchor="-25.0" />
 				    </children>
 			    </AnchorPane>
 			

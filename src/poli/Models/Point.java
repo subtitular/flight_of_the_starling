@@ -14,6 +14,7 @@ import java.util.Random;
 public class Point {
     private double positionX;
     private double positionY;
+    private int id;
 
     private int size;
 
@@ -24,7 +25,13 @@ public class Point {
         this.random = random;
         this.size=random.nextInt(3,5);
     }
+    public int getId(){
+        return id;
+    }
     
+    public void setId(int id){
+        this.id = id;
+    }
     public double getPositionX() {
         return positionX;
     }
