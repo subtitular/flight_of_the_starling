@@ -119,7 +119,7 @@ public class MainView extends Application implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //String path = getClass().getClass().getResourceAsStream(
-        image = new Image("poli/Assets/images/a.jpg");
+        image = new Image("poli/Assets/images/b.jpg");
         imageView.setImage(image);
         centerX = canvas.getWidth() / 2.0;
         centerY = canvas.getHeight() / 2.0;
