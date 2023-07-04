@@ -27,7 +27,7 @@ public class FlyingObject extends MovingPoint {
         tono = Math.abs(random.nextGaussian(0.3,0.1));
         if(tono> 1.0) tono = 1.0 - (tono%1.0);
         tono= tono*(0.5+(super.getSize()/10));
-        color = new Color(tono,tono,tono,0.8);
+        color = new Color(Math.max(tono,0.3),tono,Math.max(tono,0.5),0.8);
     }
     public String getForm() {
         return form;

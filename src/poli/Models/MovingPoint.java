@@ -29,6 +29,9 @@ public class MovingPoint extends Point {
     /*private double centerX = 0.0;
     private double centerY = 0.0;*/
     public Point2D center;
+    public Path path;
+      
+    
 
     public MovingPoint(Random random) {
         super(random);
@@ -38,6 +41,7 @@ public class MovingPoint extends Point {
         deltaDirectionX = random.nextGaussian(deltaRadio,0.05);
         deltaDirectionY = random.nextGaussian(deltaRadio,0.05);
         deltaSpeed = random.nextGaussian(50,10);
+        
     }
     
     public double getSpeed() {
@@ -79,20 +83,24 @@ public class MovingPoint extends Point {
     @Override 
     public void InitRandomPosition(double canvasWith,double canvasHeight){
         super.InitRandomPosition(canvasWith,canvasHeight);
-        center = new Point2D(super.getPositionX(), super.getPositionY());
+        
         /*centerX=super.getPositionX();
         centerY = super.getPositionY();*/
         //System.out.println("Moving " +centerX +" "+ centerY);
         this.direction = random.nextDouble() * 2 * Math.PI;
         this.speed = random.nextDouble() * deltaSpeed;
+        
+        center = new Point2D(super.getPositionX(), super.getPositionY());
+        path = new Path(canvasWith,canvasHeight,center);
     }
     //double maxx = 0.0;
     //double maxy = 0.0;
     public void NextPosition(){
         //double x = getPositionX();
         //double y = getPositionY();
-        double x = center.getX() +  Math.cos(direction)* deltaDirectionX;
-        double y = center.getY() +  Math.sin(direction)*deltaDirectionY;
+        var c = path.getNewCenter();
+        double x = c.getX() +  Math.cos(direction)* deltaDirectionX;
+        double y = c.getY() +  Math.sin(direction)*deltaDirectionY;
         //if(y>=maxy)maxy=y;
         //if(x>=maxx)maxx=x;
         setPositionX(x);
