@@ -54,13 +54,13 @@ public class Herd {
         
     }
 
-    public void searchLeader(Starling starling) {
+    public void searchLeader(SocialFlyingAnimal socialBird) {
         double distance = 10000000;
         for(int i = 0; i < ultimateLeaders.size();i++){
             var l = ultimateLeaders.get(i);
-            double dist = starling.center.distance(l.center);
+            double dist = socialBird.center.distance(l.center);
             if(distance > dist )
-                starling.setLeader(l);
+                socialBird.setLeader(l);
         }
         
     }

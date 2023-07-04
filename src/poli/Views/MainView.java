@@ -37,6 +37,7 @@ import javafx.util.Duration;
 import poli.Models.Herd;
 import poli.Models.MovingPoint;
 import poli.Models.Point;
+import poli.Models.SocialFlyingAnimal;
 import poli.Models.Starling;
 /**
  *
@@ -148,13 +149,14 @@ public class MainView extends Application implements Initializable {
             // Realiza las acciones que desees con el nuevo valor del slider
         });
         leadershipSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            minLeadership = cantidadSlider.getValue();
-            if(minLeadership>horda.getMaxLeadership()) minLeadership=horda.getMaxLeadership();
+            minLeadership = leadershipSlider.getValue();
+            System.out.println(minLeadership);
+            //if(minLeadership>horda.getMaxLeadership()) minLeadership=horda.getMaxLeadership();
             // Realiza las acciones que desees con el nuevo valor del slider
             for (int i = 0; i < MAX_STARLINGS-1; i++) {
             boolean isLeader = starlings[i].setMinLeadership(minLeadership);
             if(!isLeader){
-                horda.searchLeader(starlings[i]);
+                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
             }
         }
         });   

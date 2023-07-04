@@ -52,7 +52,7 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <Label layoutX="8.0" layoutY="6.0" text="Liderazgo" />
-                              <Slider fx:id="leadershipSlider" layoutY="23.0" max="200.0" prefHeight="14.0" prefWidth="202.0" />
+                              <Slider fx:id="leadershipSlider" layoutY="23.0" max="2000.0" prefHeight="14.0" prefWidth="202.0" />
                               <Label layoutY="37.0" prefHeight="46.0" prefWidth="201.0" text="Algunos estorninos pueden exhibir cualidades de liderazgo, tomando la delantera en los patrones de vuelo y guiando los movimientos del grupo" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
                                  <font>
                                     <Font size="8.0" />
