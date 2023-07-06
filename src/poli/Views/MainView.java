@@ -111,7 +111,7 @@ public class MainView extends Application implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //String path = getClass().getClass().getResourceAsStream(
-        image = new Image("poli/Assets/images/b.jpg");
+        image = new Image("poli/Assets/images/c.jpg");
         if (image != null) {
             double w = 0;
             double h = 0;

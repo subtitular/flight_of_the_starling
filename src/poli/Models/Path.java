@@ -29,8 +29,8 @@ public class Path {
         this.centroB = new Point2D(2*width/3,height/2);
         this.pivote = pivote;
         uno =pivote;
-        dos = pivote.distance(centroA) >= pivote.distance(centroB)?centroB : centroA;
-        tres = pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
+        dos = centroA;//pivote.distance(centroA) >= pivote.distance(centroB)?centroB : centroA;
+        tres = centroB;// pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
         calculateDeltas();
     }
     private void calculateDeltas(){
