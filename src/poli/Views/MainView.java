@@ -7,6 +7,7 @@ package poli.Views;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -129,14 +130,10 @@ public class MainView extends Application implements Initializable {
             cantidad = (int)cantidadSlider.getValue();
             // Realiza las acciones que desees con el nuevo valor del slider
         });
+        
         leadershipSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             minLeadership = leadershipSlider.getValue();
-            for (int i = 0; i < MAX_STARLINGS-1; i++) {
-            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
-            if(!isLeader){
-                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
-            }
-        }
+            horda.setMinLeadership(minLeadership);
         });   
         
         cooperationLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
@@ -186,6 +183,8 @@ public class MainView extends Application implements Initializable {
             starlings[i].InitRandomPosition(maxX, maxY);
             horda.setLeadership(starlings[i]);
         }
+        horda.setBirds(starlings);
+        
         // Crear la animación para actualizar el punto en cada fotograma
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(16), event -> {
             update();

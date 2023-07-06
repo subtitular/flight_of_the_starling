@@ -18,6 +18,7 @@ public class Herd {
     private int total;
     private double maxLeadership;
     private List<SocialFlyingAnimal> ultimateLeaders = new ArrayList<SocialFlyingAnimal>();
+    private double minLeadership;
     
             
     public Herd(int max){
@@ -55,5 +56,15 @@ public class Herd {
                 socialBird.setLeader(l);
         }
         
+    }
+
+    public void setMinLeadership(double minLeadership) {
+        this.minLeadership = minLeadership;
+        for (int i = 0; i < total-1; i++) {
+            boolean isLeader = birds[i].setMinLeadership(minLeadership * 20);
+            if(!isLeader){
+                this.searchLeader((SocialFlyingAnimal)birds[i]);
+            }
+        }
     }
 }
