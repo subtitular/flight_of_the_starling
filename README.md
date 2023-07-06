@@ -15,26 +15,35 @@ classDiagram
     SocialFlyingAnimal <|-- Starling
     Herd--*SocialFlyingAnimal
     class Point{
-        +double x
-        +double y
         +getPositionY()
         +getPositionX()
         +InitRandomPosition()
     }
     class MovingPoint{
-        
+        +Point2D center
+        +Path path
     }
     class FlyingPoint{
-
+        +String shape
+        +double speed
+        +double direction
+        +getPositionY()
+        +getPositionX()
+        +InitRandomPosition()
     }
-    class SocialFyingAnimal {
-
+    class SocialFlyingAnimal{
+        +SocialFlyingAnimal leader
+        +InitRandomPosition()
     }
     class Starling {
 
     }
     class Herd{
-        List~Starling~  Starling
+        +List~Starling~  Starling
+        +int total
+        +double maxLeadership
+        +setLeaderShip(SocialFlyingAnimal socialBird)
+        +searchLeader(SocialFlyingAnimal socialBird)
     }
 
 
