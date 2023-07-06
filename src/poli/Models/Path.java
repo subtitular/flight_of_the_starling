@@ -19,7 +19,8 @@ public class Path {
     private Point2D dos;
     private Point2D tres;
     private Point2D temp;
-    
+    private Point2D nextPivote;
+    private boolean mustChange = false;
     private int pasoActual = 0;
     private double deltaX = 0.0;
     private double deltaY = 0.0;
@@ -42,6 +43,13 @@ public class Path {
             pasoActual++;
             return currentCenter();
         }
+        if(mustChange && dos.distance(pivote)== 0){
+            mustChange =false;
+            uno =nextPivote;
+            dos = centroA;
+            tres = centroB;// pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
+            calculateDeltas();
+        }
         temp = uno;
         uno = dos;
         dos = tres;
@@ -53,4 +61,9 @@ public class Path {
    private Point2D currentCenter(){
        return new Point2D(uno.getX() + pasoActual*deltaX,uno.getY()+ pasoActual*deltaY);
    }
+
+    void setNewCenter(Point2D newCenter) {
+        nextPivote = newCenter;
+        mustChange = true;
+    }
 }

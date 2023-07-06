@@ -152,7 +152,7 @@ public class MainView extends Application implements Initializable {
         });
         leadershipSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             minLeadership = leadershipSlider.getValue();
-            System.out.println(minLeadership);
+            //System.out.println(minLeadership);
             //if(minLeadership>horda.getMaxLeadership()) minLeadership=horda.getMaxLeadership();
             // Realiza las acciones que desees con el nuevo valor del slider
             for (int i = 0; i < MAX_STARLINGS-1; i++) {

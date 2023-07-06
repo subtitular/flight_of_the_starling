@@ -42,7 +42,7 @@ public class SocialFlyingAnimal extends FlyingObject  {
     }
     public void setLeader(SocialFlyingAnimal b) {
         leader = b;
-        this.center = b.path.getNewCenter();
+        this.path.setNewCenter(b.path.getNewCenter());
         //TODO: involucrar el diametro y la dirección para que el punto no pierda continuidad cuando elija un nuevo lider
     }
     
