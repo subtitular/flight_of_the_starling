@@ -207,7 +207,7 @@ public class MainView extends Application implements Initializable {
         gc.fillOval(x1 - 5, y1 - 5, 10, 10);
         for (int i = 0; i < cantidad-1; i++) {
             gc.setFill(starlings[i].getColor());          
-            gc.fillOval(starlings[i].getPositionX() - 5, starlings[i].getPositionY() - 5, starlings[i].getSize(),starlings[i].getSize());
+            gc.fillOval(starlings[i].getX() - 5, starlings[i].getY() - 5, starlings[i].getSize(),starlings[i].getSize());
         }
     }
     @FXML

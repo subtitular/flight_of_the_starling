@@ -90,7 +90,7 @@ public class MovingPoint extends Point {
         this.direction = random.nextDouble() * 2 * Math.PI;
         this.speed = random.nextDouble() * deltaSpeed;
         
-        center = new Point2D(super.getPositionX(), super.getPositionY());
+        center = new Point2D(super.getX(), super.getY());
         path = new Path(canvasWith,canvasHeight,center);
     }
     //double maxx = 0.0;
@@ -103,8 +103,8 @@ public class MovingPoint extends Point {
         double y = c.getY() +  Math.sin(direction)*deltaDirectionY;
         //if(y>=maxy)maxy=y;
         //if(x>=maxx)maxx=x;
-        setPositionX(x);
-        setPositionY(y);
+        setX(x);
+        setY(y);
         direction += deltaDirection;
         //System.out.println( x +" " +y+ "-- " +deltaDirectionX +"  " + deltaDirectionY );
     }

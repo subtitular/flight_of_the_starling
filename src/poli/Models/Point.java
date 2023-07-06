@@ -12,8 +12,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 public class Point {
-    private double positionX;
-    private double positionY;
+    private double X;
+    private double Y;
     private int id;
 
     private int size;
@@ -32,22 +32,22 @@ public class Point {
     public void setId(int id){
         this.id = id;
     }
-    public double getPositionX() {
-        return positionX;
+    public double getX() {
+        return X;
     }
-    public void setPositionX(double positionX) {
-        this.positionX = positionX;
+    public void setX(double positionX) {
+        this.X = positionX;
     }
-    public double getPositionY() {
-        return positionY;
+    public double getY() {
+        return Y;
     }
-    public void setPositionY(double positionY) {
-        this.positionY = positionY;
+    public void setY(double positionY) {
+        this.Y = positionY;
     }
     public void InitRandomPosition(double canvasWidth,double canvasHeight){
         
-       this.positionX = random.nextGaussian(canvasWidth/2,canvasWidth/4);
-       this.positionY = random.nextGaussian( canvasHeight/2, canvasHeight/4);
+       this.X = random.nextGaussian(canvasWidth/2,canvasWidth/4);
+       this.Y = random.nextGaussian( canvasHeight/2, canvasHeight/4);
        // System.out.println(this.positionX +" "+ this.positionY);
     }
     public int getSize() {
@@ -55,5 +55,8 @@ public class Point {
     }
     public void setSize(int size) {
         this.size = size;
+    }
+    public double distance(Point point){
+        return Math.sqrt(Math.pow(X-point.getX(),2) + Math.pow(Y-point.getY(),2));
     }
 }

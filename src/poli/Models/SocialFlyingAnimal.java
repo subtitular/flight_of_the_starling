@@ -79,8 +79,8 @@ public class SocialFlyingAnimal extends FlyingObject  {
     @Override
     public void InitRandomPosition(double canvasWidth,double canvasHeight){
         super.InitRandomPosition(canvasWidth,canvasHeight);
-        super.setPositionX(random.nextGaussian(canvasWidth/2,canvasWidth/4));
-        super.setPositionY(random.nextGaussian( canvasHeight/2,canvasHeight/4)) ;
+        super.setX(random.nextGaussian(canvasWidth/2,canvasWidth/4));
+        super.setY(random.nextGaussian( canvasHeight/2,canvasHeight/4)) ;
         super.setDirection (random.nextDouble() * 2 * Math.PI);
         this.setSpeed (random.nextDouble() * 100);
     }
