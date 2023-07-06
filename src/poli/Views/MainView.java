@@ -183,10 +183,10 @@ public class MainView extends Application implements Initializable {
     }
 
     private void update() {
-        angle += 0.01;
+        /*angle += 0.01;
         if (angle > 2 * Math.PI) {
             angle -= 2 * Math.PI;
-        }
+        }*/
         for (int i = 0; i < cantidad-1; i++) {
             //movingPoints[i] = new MovingPoint();
             //points[i].setPositionX(random.nextDouble() * centerX *2);
@@ -199,14 +199,14 @@ public class MainView extends Application implements Initializable {
     private void draw() {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         //gc.drawImage(image, 0, 0);
-        double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
+        /*double radius = Math.min(canvas.getWidth(), canvas.getHeight()) / 2.0 - 5;
         
         double x1 = centerX + radius * Math.cos(angle);
         double y1 = centerY + radius * Math.sin(angle);
         
         
         
-        gc.fillOval(x1 - 5, y1 - 5, 10, 10);
+        gc.fillOval(x1 - 5, y1 - 5, 10, 10);*/
         for (int i = 0; i < cantidad-1; i++) {
             gc.setFill(starlings[i].getColor());          
             gc.fillOval(starlings[i].getX() - 5, starlings[i].getY() - 5, starlings[i].getSize(),starlings[i].getSize());

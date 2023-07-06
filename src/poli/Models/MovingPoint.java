@@ -35,9 +35,8 @@ public class MovingPoint extends Point {
 
     public MovingPoint(Random random) {
         super(random);
-        deltaDirection=random.nextGaussian(0.01,0.005);
+        deltaDirection=random.nextGaussian(0.005,0.005);
         deltaRadio = random.nextGaussian(200,40);
-        //System.out.println(deltaRadio);
         deltaDirectionX = random.nextGaussian(deltaRadio,0.05);
         deltaDirectionY = random.nextGaussian(deltaRadio,0.05);
         deltaSpeed = random.nextGaussian(50,10);
@@ -87,7 +86,8 @@ public class MovingPoint extends Point {
         /*centerX=super.getPositionX();
         centerY = super.getPositionY();*/
         //System.out.println("Moving " +centerX +" "+ centerY);
-        this.direction = random.nextDouble() * 2 * Math.PI;
+        //this.direction = random.nextGaussian(0.5,0.01) * 2 * Math.PI;
+        this.direction = 0;
         this.speed = random.nextDouble() * deltaSpeed;
         
         center = new Point2D(super.getX(), super.getY());

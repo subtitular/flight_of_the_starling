@@ -29,31 +29,32 @@ public class Path {
         this.centroA = new Point2D(width/3,height/2);
         this.centroB = new Point2D(2*width/3,height/2);
         this.pivote = pivote;
-        uno =pivote;
+        uno = pivote;
         dos = centroA;//pivote.distance(centroA) >= pivote.distance(centroB)?centroB : centroA;
         tres = centroB;// pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
         calculateDeltas();
     }
     private void calculateDeltas(){
-        deltaX = -(uno.getX()-dos.getX())/1200;
-        deltaY = -(uno.getY()-dos.getY())/1200;
+        deltaX = -(uno.getX()-dos.getX())/300;
+        deltaY = -(uno.getY()-dos.getY())/300;
     }
     public Point2D getNewCenter(){
-        if(pasoActual<1200){
+        if(pasoActual<300){
             pasoActual++;
             return currentCenter();
         }
-        if(mustChange && dos.distance(pivote)== 0){
+        if(mustChange && uno.distance(pivote)== 0){
             mustChange =false;
-            uno =nextPivote;
-            dos = centroA;
-            tres = centroB;// pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
-            calculateDeltas();
+            tres =nextPivote;
+            //dos = centroA;
+            //tres = centroB;// pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
+        } else {
+            temp = uno;
+            uno = dos;
+            dos = tres;
+            tres = temp;
+            
         }
-        temp = uno;
-        uno = dos;
-        dos = tres;
-        tres = temp;
         pasoActual = 0;
         calculateDeltas();
         return currentCenter();

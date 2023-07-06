@@ -24,7 +24,7 @@
          <children>
             <Accordion prefHeight="613.0" prefWidth="233.0">
               <panes>
-                <TitledPane animated="false" text="Usuario Yo">
+                <TitledPane animated="false" text="Usuario">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
