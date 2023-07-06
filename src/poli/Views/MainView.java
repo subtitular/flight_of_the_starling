@@ -51,10 +51,12 @@ public class MainView extends Application implements Initializable {
     @FXML
     private Button playButton;
     
-    private double centerX;
-    private double centerY;
-    private double angle;
     private int cantidad;
+    double cooperation = 0.0;
+    double adaptability = 0.0;
+    double agility = 0.0;
+    double synchronization = 0.0;
+    
     private final int MAX_STARLINGS = 10000;
     
     private Starling[] starlings = new Starling[MAX_STARLINGS]; 
@@ -118,11 +120,8 @@ public class MainView extends Application implements Initializable {
             imageView.setImage(image);
         }
         
-        centerX = canvas.getWidth() / 2.0;
-        centerY = canvas.getHeight() / 2.0;
         double maxX = canvas.getWidth();
         double maxY = canvas.getHeight();
-        angle = 0.0;
         Random random = new Random();
         horda = new Herd(MAX_STARLINGS);
         
@@ -140,6 +139,45 @@ public class MainView extends Application implements Initializable {
         }
         });   
         
+        cooperationLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
+            cooperation = cooperationLevel.getValue();
+            for (int i = 0; i < MAX_STARLINGS-1; i++) {
+            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
+            if(!isLeader){
+                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
+            }
+        }
+        });   
+        
+        adaptabilityLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
+            adaptability = adaptabilityLevel.getValue();
+            for (int i = 0; i < MAX_STARLINGS-1; i++) {
+            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
+            if(!isLeader){
+                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
+            }
+        }
+        });
+        
+        agilityLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
+            agility = agilityLevel.getValue();
+            for (int i = 0; i < MAX_STARLINGS-1; i++) {
+            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
+            if(!isLeader){
+                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
+            }
+        }
+        }); 
+        
+        synchronizationLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
+            synchronization = synchronizationLevel.getValue();
+            for (int i = 0; i < MAX_STARLINGS-1; i++) {
+            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
+            if(!isLeader){
+                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
+            }
+        }
+        });
         
         gc = canvas.getGraphicsContext2D();
         for (int i = 0; i < MAX_STARLINGS-1; i++) {
