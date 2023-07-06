@@ -24,15 +24,7 @@ public class Herd {
         total = max;
         birds = new SocialFlyingAnimal[total];
     }
-    /*public void Create(double width, double height, Random random){
-        for(int i=0;i<total - 1;total++){
-            SocialFlyingAnimal bird = new SocialFlyingAnimal(random);
-            bird.InitRandomPosition(width, height);
-            birds[i] = (T) bird;
-        }
-       
-        
-    }*/
+
     public double getMaxLeadership(){
         return this.maxLeadership;
     }

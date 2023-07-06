@@ -48,7 +48,6 @@ public class Point {
         
        this.X = random.nextGaussian(canvasWidth/2,canvasWidth/4);
        this.Y = random.nextGaussian( canvasHeight/2, canvasHeight/4);
-       // System.out.println(this.positionX +" "+ this.positionY);
     }
     public int getSize() {
         return size;

@@ -9,8 +9,6 @@ package poli.Models;
  * con o sin propia voluntad
  * @author subti
  */
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import javafx.scene.paint.Color;
 

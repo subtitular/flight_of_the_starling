@@ -83,30 +83,19 @@ public class MovingPoint extends Point {
     public void InitRandomPosition(double canvasWith,double canvasHeight){
         super.InitRandomPosition(canvasWith,canvasHeight);
         
-        /*centerX=super.getPositionX();
-        centerY = super.getPositionY();*/
-        //System.out.println("Moving " +centerX +" "+ centerY);
-        //this.direction = random.nextGaussian(0.5,0.01) * 2 * Math.PI;
         this.direction = 0;
         this.speed = random.nextDouble() * deltaSpeed;
         
         center = new Point2D(super.getX(), super.getY());
         path = new Path(canvasWith,canvasHeight,center);
     }
-    //double maxx = 0.0;
-    //double maxy = 0.0;
     public void NextPosition(){
-        //double x = getPositionX();
-        //double y = getPositionY();
         var c = path.getNewCenter();
         double x = c.getX() +  Math.cos(direction)* deltaDirectionX;
         double y = c.getY() +  Math.sin(direction)*deltaDirectionY;
-        //if(y>=maxy)maxy=y;
-        //if(x>=maxx)maxx=x;
         setX(x);
         setY(y);
         direction += deltaDirection;
-        //System.out.println( x +" " +y+ "-- " +deltaDirectionX +"  " + deltaDirectionY );
     }
       
     
