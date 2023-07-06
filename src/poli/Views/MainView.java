@@ -67,6 +67,12 @@ public class MainView extends Application implements Initializable {
     double minLeadership =0.0;
     @FXML
     private Slider cooperationLevel;
+    @FXML
+    private Slider adaptabilityLevel;
+    @FXML
+    private Slider agilityLevel;
+    @FXML
+    private Slider synchronizationLevel;
     @Override
     public void start(Stage primaryStage) throws IOException {
         BorderPane root = new BorderPane();

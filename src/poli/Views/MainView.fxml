@@ -11,7 +11,6 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -33,11 +32,6 @@
                               <Separator layoutX="1.0" layoutY="85.0" prefWidth="200.0" />
                               <Label layoutX="14.0" layoutY="95.0" text="Preferencias" />
                               <Label layoutX="14.0" layoutY="226.0" text="Escena" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../OneDrive/Documentos/poli/paradigmas_programacion/Insumos-Actividad%20Foro/wunderbare_welt_des_waldes_baum_pa_25241596_a.jpg" />
-                                 </image>
-                              </ImageView>
                               <Label layoutX="14.0" layoutY="397.0" text="Tema Musical" />
                               <Label layoutX="14.0" layoutY="422.0" text="Relaxing Sound 1" />
                               <Slider layoutX="161.0" layoutY="387.0" orientation="VERTICAL" prefHeight="104.0" prefWidth="14.0" value="35.0" />
@@ -56,23 +50,23 @@
                               <VBox layoutY="-1.0" prefHeight="1034.0" prefWidth="231.0">
                                  <children>
                                     <Label text="Liderazgo" />
-                                    <Slider fx:id="leadershipSlider" max="2000.0" prefHeight="14.0" prefWidth="202.0" />
+                                    <Slider fx:id="leadershipSlider" prefHeight="14.0" prefWidth="202.0" />
                                     <Label prefHeight="98.0" prefWidth="231.0" text="Algunos estorninos pueden exhibir cualidades de liderazgo, tomando la delantera en los patrones de vuelo y guiando los movimientos del grupo" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                                     <Separator prefWidth="200.0" />
                                     <Label text="Cooperación" />
-                                    <Slider fx:id="cooperationLevel" prefHeight="14.0" prefWidth="202.0" value="55.0" />
+                                    <Slider fx:id="cooperationLevel" prefHeight="14.0" prefWidth="202.0" />
                                     <Label prefHeight="134.0" prefWidth="231.0" text="Los estorninos son conocidos por su naturaleza altamente cooperativa. Suelen volar muy cerca unos de otros, sincronizando sus movimientos y realizando giros rápidos o formaciones como una unidad cohesionada." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                                     <Separator prefWidth="200.0" />
                                     <Label text="Adaptabilidad" />
-                                    <Slider prefHeight="14.0" prefWidth="202.0" value="45.0" />
+                                    <Slider fx:id="adaptabilityLevel" prefHeight="14.0" prefWidth="202.0" />
                                     <Label prefHeight="125.0" prefWidth="231.0" text="Los estorninos son aves adaptables, capaces de ajustar sus patrones de vuelo y comportamiento en base a varios factores como las condiciones del viento, las amenazas o los cambios en el entorno." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                                     <Separator prefWidth="200.0" />
                                     <Label text="Agilidad" />
-                                    <Slider prefHeight="14.0" prefWidth="202.0" value="75.0" />
+                                    <Slider fx:id="agilityLevel" prefHeight="14.0" prefWidth="202.0" />
                                     <Label prefHeight="143.0" prefWidth="232.0" text="Los estorninos poseen una notable agilidad en el vuelo, lo que les permite realizar maniobras intrincadas, como cambios repentinos de dirección y aceleraciones o desaceleraciones rápidas." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                                     <Separator prefWidth="200.0" />
                                     <Label prefHeight="8.0" prefWidth="88.0" text="Sincronización" />
-                                    <Slider prefHeight="14.0" prefWidth="202.0" value="65.0" />
+                                    <Slider fx:id="synchronizationLevel" prefHeight="14.0" prefWidth="202.0" />
                                     <Label prefHeight="85.0" prefWidth="234.0" text="Los estorninos son reconocidos por su capacidad para volar en grandes bandadas con una sincronización impresionante" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" />
                                  </children>
                               </VBox>
