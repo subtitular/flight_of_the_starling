@@ -40,10 +40,11 @@ public class FlyingObject extends MovingPoint {
         this.color = color;
     }
     public double getSpeed() {
-        return speed;
+        return this.speed;
     }
     public void setSpeed(double speed) {
         this.speed = speed;
+        this.path.setSpeed(speed);
     }
     public double getDirection() {
         return direction;

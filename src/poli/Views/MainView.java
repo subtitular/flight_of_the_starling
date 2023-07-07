@@ -100,7 +100,7 @@ public class MainView extends Application implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        image = new Image("poli/Assets/images/d.jpg");
+        image = new Image("poli/Assets/images/c.jpg");
         if (image != null) {
             double w = 0;
             double h = 0;

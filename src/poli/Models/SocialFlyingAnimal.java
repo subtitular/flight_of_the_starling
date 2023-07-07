@@ -51,6 +51,7 @@ public class SocialFlyingAnimal extends FlyingObject  {
     }
     public void setCooperationLevel(double cooperationLevel) {
         this.cooperationLevel = cooperationLevel;
+        super.setDeltaRadio(cooperationLevel);
     }
     public String getSynchronizationLevel() {
         return synchronizationLevel;

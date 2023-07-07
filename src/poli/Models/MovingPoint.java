@@ -26,8 +26,6 @@ public class MovingPoint extends Point {
     private double deltaRadio;
     private double deltaDirection;
     private double deltaSpeed;
-    /*private double centerX = 0.0;
-    private double centerY = 0.0;*/
     public Point2D center;
     public Path path;
       
