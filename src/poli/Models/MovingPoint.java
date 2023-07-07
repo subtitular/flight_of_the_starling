@@ -42,6 +42,9 @@ public class MovingPoint extends Point {
         deltaSpeed = random.nextGaussian(50,10);
         
     }
+    public void setDeltaRadio(double cooperation){
+        deltaRadio = random.nextGaussian(cooperation,cooperation/5);
+    }
     
     public double getSpeed() {
         return speed;

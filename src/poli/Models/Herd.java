@@ -19,6 +19,7 @@ public class Herd {
     private double maxLeadership;
     private List<SocialFlyingAnimal> ultimateLeaders = new ArrayList<SocialFlyingAnimal>();
     private double minLeadership;
+    private double cooperation;
     
             
     public Herd(int max){
@@ -65,6 +66,13 @@ public class Herd {
             if(!isLeader){
                 this.searchLeader((SocialFlyingAnimal)birds[i]);
             }
+        }
+    }
+
+    public void setCooperation(double cooperation) {
+        this.cooperation = cooperation;
+        for (int i = 0; i < total-1; i++) {
+            birds[i].setCooperationLevel(cooperation);
         }
     }
 }

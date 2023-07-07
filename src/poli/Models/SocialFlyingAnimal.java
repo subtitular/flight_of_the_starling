@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Random;
 public class SocialFlyingAnimal extends FlyingObject  {
     private double leadershipLevel;
-    private String cooperationLevel;
+    private double cooperationLevel;
     private String synchronizationLevel;
     private String communicationLevel;
     private String socialBondingLevel;
@@ -46,10 +46,10 @@ public class SocialFlyingAnimal extends FlyingObject  {
         //TODO: involucrar el diametro y la dirección para que el punto no pierda continuidad cuando elija un nuevo lider
     }
     
-    public String getCooperationLevel() {
+    public double getCooperationLevel() {
         return cooperationLevel;
     }
-    public void setCooperationLevel(String cooperationLevel) {
+    public void setCooperationLevel(double cooperationLevel) {
         this.cooperationLevel = cooperationLevel;
     }
     public String getSynchronizationLevel() {

@@ -24,6 +24,8 @@ public class Path {
     private int pasoActual = 0;
     private double deltaX = 0.0;
     private double deltaY = 0.0;
+    private int speed = 300;
+    private int actual = 0;
     
     public Path(double width,double height, Point2D pivote){
         this.centroA = new Point2D(width/3,height/2);
@@ -35,26 +37,26 @@ public class Path {
         calculateDeltas();
     }
     private void calculateDeltas(){
-        deltaX = -(uno.getX()-dos.getX())/300;
-        deltaY = -(uno.getY()-dos.getY())/300;
+        deltaX = -(uno.getX()-dos.getX())/speed;
+        deltaY = -(uno.getY()-dos.getY())/speed;
     }
     public Point2D getNewCenter(){
-        if(pasoActual<300){
+        if(pasoActual<speed){
             pasoActual++;
             return currentCenter();
         }
         if(mustChange && uno.distance(pivote)== 0){
             mustChange =false;
-            tres =nextPivote;
-            //dos = centroA;
+            //uno =nextPivote;
+            dos = nextPivote;
             //tres = centroB;// pivote.distance(centroA) < pivote.distance(centroB)?centroB : centroA;
-        } else {
-            temp = uno;
-            uno = dos;
-            dos = tres;
-            tres = temp;
+        } 
+        temp = uno;
+        uno = dos;
+        dos = tres;
+        tres = temp;
             
-        }
+        
         pasoActual = 0;
         calculateDeltas();
         return currentCenter();

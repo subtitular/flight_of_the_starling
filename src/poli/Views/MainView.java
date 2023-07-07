@@ -138,12 +138,8 @@ public class MainView extends Application implements Initializable {
         
         cooperationLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
             cooperation = cooperationLevel.getValue();
-            for (int i = 0; i < MAX_STARLINGS-1; i++) {
-            boolean isLeader = starlings[i].setMinLeadership(minLeadership);
-            if(!isLeader){
-                horda.searchLeader((SocialFlyingAnimal)starlings[i]);
-            }
-        }
+            horda.setCooperation(cooperation);
+
         });   
         
         adaptabilityLevel.valueProperty().addListener((observable, oldValue, newValue) -> {
