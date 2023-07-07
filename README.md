@@ -36,7 +36,12 @@ classDiagram
         +InitRandomPosition()
     }
     class Starling {
-
+        -String group
+        -String energyLevel
+        -String adaptabilityLevel
+        -String agilityLevel
+        -String explorationLevel
+        -String playfulnessLevel
     }
     class Herd{
         +List~Starling~  Starling
